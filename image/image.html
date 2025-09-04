@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Mini Image Editor</title>
+<link rel="stylesheet" href="image.css">
+<link rel="stylesheet" href="../bg.css">
+<link rel="stylesheet" href="../navbar.css">
+</head>
+<body>
+<div class="navbar">
+    <a href="../tableau/tableau.html">Tableau</a>
+    <a href="../text/text.html">Texte</a>
+    <a href="image.html" class="disabled" aria-disabled="true"
+    <a href="../audio/audio.html">Audio</a>
+    <a href="../video/video.html">Video</a>
+    <a href="../liens/lien.html">Liens</a>
+    <a href="../listes/list.html">Listes</a>
+    <a href="../questionnaire/q.html">Questionnaire</a>
+    <a href="../page complet/pc.html">Page Complet</a>
+</div>
+
+<h2>Pro Mini Image Editor</h2>
+
+<div id="drop-area">Drag & Drop Image Here<br>or Click to Upload</div>
+<input type="file" id="upload" style="display:none">
+
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<div class="slider-group">
+  <label>Brightness:</label>
+  <input type="range" id="brightness" min="-100" max="100" value="0">
+  <label>Contrast:</label>
+  <input type="range" id="contrast" min="-100" max="100" value="0">
+  <label>Saturation:</label>
+  <input type="range" id="saturation" min="-100" max="100" value="0">
+  <label>Hue Rotation:</label>
+  <input type="range" id="hue" min="0" max="360" value="0">
+  <label>Blur (px):</label>
+  <input type="range" id="blur" min="0" max="10" value="0">
+  <label>Sharpen (0-5):</label>
+  <input type="range" id="sharpen" min="0" max="5" step="0.1" value="0">
+  <label>Clarity (0-5):</label>
+  <input type="range" id="clarity" min="0" max="5" step="0.1" value="0">
+</div>
+
+<div>
+  <button id="grayscale">Grayscale</button>
+  <button id="sepia">Sepia</button>
+  <button id="invert">Invert</button>
+  <button id="reset">Reset Filters</button>
+</div>
+
+<div>
+  <button id="rotate-left">Rotate Left ⟲</button>
+  <button id="rotate-right">Rotate Right ⟳</button>
+  <button id="crop-btn">Crop Selected Area</button>
+</div>
+
+<button id="download">Download Edited Image</button>
+
+<script src="image.js"></script>
+</body>
+</html>

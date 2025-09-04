@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="../navbar.css">
+<link rel="stylesheet" href="audio.css">
+<title>Futuristic Music Player</title>
+<style>
+    
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../index.html" class="nav-home" aria-label="Home" title="Home">
+            <span class="home-icon" aria-hidden="true"></span>
+            Home
+        </a>
+        <a href="tableau/tableau.html" class="disabled" aria-disabled="true"
+        <a href="text/text.html">Texte</a>
+        <a href="image/image.html">Images</a>
+        <a href="audio/audio.html">Audio</a>
+        <a href="video/video.html">Video</a>
+        <a href="liens/lien.html">Liens</a>
+        <a href="listes/list.html">Listes</a>
+        <a href="questionnaire/q.html">Questionnaire</a>
+        <a href="page complet/pc.html">Page Complet</a>
+        
+    </div>
+<div class="wrap">
+    <div class="player">
+        <div class="title-row">
+            <div class="brand">
+                <div class="logo">FMP</div>
+                <div>
+                    <h1>Futuristic Music Player</h1>
+                    <p class="sub">Drop files or click upload — play in neon style</p>
+                </div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+                <button class="small-btn" id="shuffle">🔀</button>
+                <button class="small-btn" id="repeat">🔁</button>
+            </div>
+        </div>
+
+        <div class="visual" id="visual">
+            <canvas id="visCanvas"></canvas>
+        </div>
+
+        <div class="meta">
+            <div class="cover">
+                <div class="disc" id="disc">♪</div>
+            </div>
+            <div class="track-info">
+                <div class="track-name" id="title">No track loaded</div>
+                <div class="track-artist" id="artist">Upload audio files from your device</div>
+            </div>
+            <div style="width:160px;display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+                <div style="display:flex;gap:8px;">
+                    <button class="small-btn" id="prev">⏮️</button>
+                    <button class="big-btn play" id="play">▶</button>
+                    <button class="small-btn" id="next">⏭️</button>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <input id="vol" type="range" min="0" max="1" step="0.01" value="0.8" style="width:110px">
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="progress">
+                <div class="time" id="curTime">0:00</div>
+                <input id="seek" class="seek" type="range" min="0" max="100" value="0">
+                <div class="time" id="duration">0:00</div>
+            </div>
+        </div>
+
+        <div class="uploader">
+            <label class="upload-btn" title="Upload audio files">
+                Upload
+                <input id="fileInput" type="file" accept="audio/*" multiple>
+            </label>
+            <div class="dropzone" id="dropzone">Or drag & drop files here</div>
+        </div>
+
+    </div>
+
+    <aside class="playlist">
+        <div class="pl-header">
+            <strong>Playlist</strong>
+            <div style="display:flex;gap:8px;align-items:center">
+                <button class="small-btn" id="clear">Clear</button>
+                <button class="small-btn" id="importExample">Load Demo</button>
+            </div>
+        </div>
+        <div class="pl-list" id="plList"></div>
+        <div class="bottom">
+            <div style="color:#9fb3d9;font-size:13px">Local files only · No uploads to internet</div>
+            <div style="display:flex;gap:8px">
+                <button class="small-btn" id="prev2">Prev</button>
+                <button class="small-btn" id="play2">Play/Pause</button>
+                <button class="small-btn" id="next2">Next</button>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<script src="audio.js"></script>
+</body>
+</html>
